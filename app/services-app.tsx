@@ -10,11 +10,12 @@ type View = "scopri" | "domanda" | "attivita";
 const emptyDashboard: ServicesDashboard = { configured: false, viewerId: null, profile: null, demand: [], organizations: [], offers: [], requests: [], reviews: [] };
 const modeLabels: Record<ServiceMode, string> = { online: "Online", domicilio: "A domicilio", luogo: "In un luogo", ibrido: "Ibrido" };
 const suite = [
-  ["Home", "https://tecnosocialismo.com"], ["Iskra", "https://iskra.tecnosocialismo.com"], ["Rizoma", "https://rizoma.tecnosocialismo.com"],
+  ["Home", "https://tecnosocialismo.com"], ["Rizoma", "https://rizoma.tecnosocialismo.com"], ["Iskra", "https://iskra.tecnosocialismo.com"],
   ["Cloud", "https://cloud.tecnosocialismo.com"], ["Mail", "https://mail.tecnosocialismo.com"], ["Video", "https://video.tecnosocialismo.com"],
-  ["Social", "https://social.tecnosocialismo.com"], ["Sport", "https://sport.tecnosocialismo.com"], ["Market", "https://market.tecnosocialismo.com"],
+  ["Musica", "https://musica.tecnosocialismo.com"], ["Social", "https://social.tecnosocialismo.com"], ["Messaggi", "https://messaggi.tecnosocialismo.com"],
+  ["Sport", "https://sport.tecnosocialismo.com"], ["Market", "https://market.tecnosocialismo.com"],
   ["Lavoro", "https://lavoro.tecnosocialismo.com"], ["Azienda", "https://azienda.tecnosocialismo.com"], ["Servizi", "https://servizi.tecnosocialismo.com"],
-  ["Biblioteca", "https://biblioteca.tecnosocialismo.com"], ["Messaggi", "https://messaggi.tecnosocialismo.com"], ["Militant", "https://militant.tecnosocialismo.com"], ["Account", "https://login.tecnosocialismo.com"],
+  ["Biblioteca", "https://biblioteca.tecnosocialismo.com"], ["Militant", "https://militant.tecnosocialismo.com"], ["Account", "https://login.tecnosocialismo.com"],
 ];
 
 export default function ServicesApp({ initialUser }: { initialUser: SuiteUser | null }) {
