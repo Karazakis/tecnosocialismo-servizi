@@ -13,8 +13,8 @@ const suite = [
   ["Home", "https://tecnosocialismo.com"], ["Iskra", "https://iskra.tecnosocialismo.com"], ["Rizoma", "https://rizoma.tecnosocialismo.com"],
   ["Cloud", "https://cloud.tecnosocialismo.com"], ["Mail", "https://mail.tecnosocialismo.com"], ["Video", "https://video.tecnosocialismo.com"],
   ["Social", "https://social.tecnosocialismo.com"], ["Sport", "https://sport.tecnosocialismo.com"], ["Market", "https://market.tecnosocialismo.com"],
-  ["Lavoro", "https://lavoro.tecnosocialismo.com"], ["Azienda", "https://azienda.tecnosocialismo.com"], ["Messaggi", "https://messaggi.tecnosocialismo.com"],
-  ["Militant", "https://militant.tecnosocialismo.com"],
+  ["Lavoro", "https://lavoro.tecnosocialismo.com"], ["Azienda", "https://azienda.tecnosocialismo.com"], ["Servizi", "https://servizi.tecnosocialismo.com"],
+  ["Messaggi", "https://messaggi.tecnosocialismo.com"], ["Militant", "https://militant.tecnosocialismo.com"], ["Account", "https://login.tecnosocialismo.com"],
 ];
 
 export default function ServicesApp({ initialUser }: { initialUser: SuiteUser | null }) {
