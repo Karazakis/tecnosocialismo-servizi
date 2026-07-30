@@ -18,11 +18,11 @@ export const seedOffers:ServiceOffer[]=[
 export async function loadServices(user?:SuiteUser|null){
   if(!process.env.BLOB_READ_WRITE_TOKEN)return{offers:seedOffers,requests:[] as ServiceRequest[],reviews:[] as ServiceReview[],organizations:[] as ProviderOrganization[]};
   const[storedOffers,requests,reviews,organizations,workspaces]=await Promise.all([listRecords<ServiceOffer>(P.offers),listRecords<ServiceRequest>(P.requests),listRecords<ServiceReview>(P.reviews),listRecords<OrganizationRecord>(P.organizations),listRecords<WorkspaceRecord>(P.workspaces)]);
-  const offers=unique([...storedOffers,...seedOffers]).filter((offer)=>offer.status==="pubblicato"||offer.providerId===user?.id).map((offer)=>withRating(offer,reviews));
+  const offers=unique([...storedOffers,...seedOffers]).filter((offer)=>(offer as {category:string}).category!=="salute"&&(offer.status==="pubblicato"||offer.providerId===user?.id)).map((offer)=>withRating(offer,reviews));
   const accessible=user?organizations.filter((organization)=>organization.status==="attiva"&&(organization.ownerId===user.id||workspaces.some((workspace)=>workspace.organizationId===organization.id&&workspace.members.some((member)=>member.userId===user.id||normalize(member.email)===normalize(user.email))))):[];
   return{offers:newest(offers),requests:user?newest(requests.filter((request)=>request.requesterId===user.id||request.providerId===user.id)):[],reviews:newest(reviews),organizations:accessible.map((item)=>({id:item.id,name:item.name,model:item.model,city:item.city}))};
 }
-export async function findService(id:string){return seedOffers.find((item)=>item.id===id)??(validId(id)?readJson<ServiceOffer>(`${P.offers}${id}.json`):null)}
+export async function findService(id:string){const item=seedOffers.find((entry)=>entry.id===id)??(validId(id)?await readJson<ServiceOffer>(`${P.offers}${id}.json`):null);return item&&(item as {category:string}).category!=="salute"?item:null}
 export async function saveOffer(value:ServiceOffer){return writeJson(`${P.offers}${value.id}.json`,value,false)}
 export async function saveRequest(value:ServiceRequest){return writeJson(`${P.requests}${value.id}.json`,value,false)}
 export async function findRequest(id:string){return validId(id)?readJson<ServiceRequest>(`${P.requests}${id}.json`):null}

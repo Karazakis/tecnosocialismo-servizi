@@ -101,8 +101,7 @@ export default function ServicesApp({ initialUser }: { initialUser: SuiteUser | 
           {loading ? <div className="loading-grid">{[1,2,3,4].map((n) => <div key={n}/>)}</div> : filtered.length ? <div className="offer-grid catalog">{filtered.map((offer) => <OfferCard offer={offer} key={offer.id} onOpen={setSelected}/>)}</div> : <Empty title="Nessun servizio con questi filtri" copy="Prova una città diversa, seleziona online o amplia la ricerca."/>}
         </section>
 
-        <section className="trust-band"><div><span>01</span><strong>Identità unica</strong><p>Un solo account per chiedere, offrire e contribuire.</p></div><div><span>02</span><strong>Qualifiche visibili</strong><p>I servizi di salute vengono pubblicati solo dopo verifica.</p></div><div><span>03</span><strong>Recensioni reali</strong><p>Si valuta soltanto dopo un servizio completato.</p></div><div><span>04</span><strong>Valore trasparente</strong><p>Prezzo di mercato e richiesta economica restano distinti.</p></div></section>
-        <section className="health-note"><span>+</span><div><strong>La salute non aspetta, ma qui non si gestiscono emergenze.</strong><p>Il portale facilita l’incontro con professionisti; per urgenze usa i servizi di emergenza del territorio.</p></div></section>
+        <section className="trust-band"><div><span>01</span><strong>Identità unica</strong><p>Un solo account per chiedere, offrire e contribuire.</p></div><div><span>02</span><strong>Disponibilità chiara</strong><p>Luoghi, orari e modalità sono visibili prima della richiesta.</p></div><div><span>03</span><strong>Recensioni reali</strong><p>Si valuta soltanto dopo un servizio completato.</p></div><div><span>04</span><strong>Valore trasparente</strong><p>Prezzo di mercato e richiesta economica restano distinti.</p></div></section>
       </>}
 
       {view === "domanda" && <DemandView data={data} onPublish={() => initialUser ? setPublishOpen(true) : location.assign(loginUrl)} />}
