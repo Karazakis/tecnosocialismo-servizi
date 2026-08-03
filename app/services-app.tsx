@@ -16,6 +16,7 @@ const suite = [
   ["Sport", "https://sport.tecnosocialismo.com"], ["Market", "https://market.tecnosocialismo.com"],
   ["Lavoro", "https://lavoro.tecnosocialismo.com"], ["Azienda", "https://azienda.tecnosocialismo.com"], ["Servizi", "https://servizi.tecnosocialismo.com"],
   ["Salute", "https://salute.tecnosocialismo.com"], ["Educazione", "https://educazione.tecnosocialismo.com"], ["Legge", "https://legge.tecnosocialismo.com"], ["Burocrazia", "https://burocrazia.tecnosocialismo.com"],
+  ["Propaganda", "https://propaganda.tecnosocialismo.com"],
   ["Biblioteca", "https://biblioteca.tecnosocialismo.com"], ["Militant", "https://militant.tecnosocialismo.com"], ["Account", "https://login.tecnosocialismo.com"],
 ];
 
